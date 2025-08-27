@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product- The Momo Wala</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <style>
+    /* Text + Zoom Animation */
+    .animate-slide { animation: slideUp 1s ease-in-out; }
+    @keyframes slideUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    .zoom { animation: zoomEffect 8s ease-in-out infinite; }
+    @keyframes zoomEffect { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+    @keyframes fadeInDown { from {opacity: 0; transform: translateY(-30px);} to {opacity: 1; transform: translateY(0);} }
+    @keyframes fadeInUp { from {opacity: 0; transform: translateY(30px);} to {opacity: 1; transform: translateY(0);} }
+    .animate-fadeInDown { animation: fadeInDown 1s ease forwards; }
+    .animate-fadeInUp { animation: fadeInUp 1.2s ease forwards; }
+      .active-link {
+  background-color: white !important;
+  color: #ea580c !important; /* Tailwind orange-600 hex */
+}
+  </style>
+</head>
+<body class="font-sans text-gray-800">
+
+  <!-- Navbar -->
+ <header class="fixed w-full bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 shadow-lg z-50">
+  <nav class="container mx-auto flex justify-between items-center py-3 px-6">
+    <!-- Logo -->
+    <a href="#" class="flex items-center space-x-2">
+      <img src="./images/logo/logo.png" alt="HomeFood Logo" class="h-20 w-auto rounded-full bg-white shadow-md">
+      <span class="text-2xl font-extrabold text-white tracking-wide">MOMOS</span>
+    </a>
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex items-center space-x-6">
+       <ul class="flex space-x-6">
+  <li><a href="index.html" class="nav-link px-4 py-2 rounded-md text-white font-medium hover:bg-white hover:text-orange-600 transition duration-300 shadow-sm">Home</a></li>
+  <li><a href="about.html" class="nav-link px-4 py-2 rounded-md text-white font-medium hover:bg-white hover:text-orange-600 transition duration-300 shadow-sm">About</a></li>
+  <li><a href="product.html" class="nav-link px-4 py-2 rounded-md text-white font-medium hover:bg-white hover:text-orange-600 transition duration-300 shadow-sm">Product</a></li>
+  <li><a href="contact.html" class="nav-link px-4 py-2 rounded-md text-white font-medium hover:bg-white hover:text-orange-600 transition duration-300 shadow-sm">Contact</a></li>
+</ul>
+      <!-- Get Quotes Button -->
+      <a href="getquote.html" class="ml-4 bg-white text-orange-600 font-semibold px-5 py-2 rounded-lg shadow-md hover:bg-orange-600 hover:text-white transition duration-300">
+        Get Quotes
+      </a>
+    </div>
+
+    <!-- Mobile Toggle -->
+    <button id="menu-toggle" class="md:hidden text-3xl text-white">☰</button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+    <a href="index.html" class="block px-6 py-3 text-orange-600 font-medium hover:bg-orange-100">Home</a>
+    <a href="about.html" class="block px-6 py-3 text-orange-600 font-medium hover:bg-orange-100">About</a>
+    <a href="product.html" class="block px-6 py-3 text-orange-600 font-medium hover:bg-orange-100">Product</a>
+    <a href="contact.html" class="block px-6 py-3 text-orange-600 font-medium hover:bg-orange-100">Contact</a>
+    <!-- Mobile Get Quotes Button -->
+    <a href="getquote.html" class="block mx-6 my-3 text-center bg-orange-600 text-white font-semibold px-5 py-2 rounded-lg shadow-md hover:bg-orange-700 transition duration-300">
+      Get Quotes
+    </a>
+  </div>
+</header>
+
+
+  <!-- Hero Section -->
+  <section class="relative w-full pt-32 pb-24 bg-gradient-to-r from-yellow-50 via-orange-50 to-yellow-100">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center px-6 gap-12">
+      
+      <!-- Left Content -->
+      <div class="flex-1 space-y-6" data-aos="fade-right">
+        <p class="text-sm font-medium text-gray-600">Hungry?</p>
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
+          JUST COME TO <span class="text-orange-600">FOODIED</span> & ORDER
+        </h1>
+        <p class="text-lg text-gray-600">Here you will find all the best quality and pure food. Order now to satisfy your hunger pangs.</p>
+        <div class="mt-6 flex gap-4">
+          <a href="#" class="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-full shadow-lg">Order Now</a>
+          <a href="#" class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-3 rounded-full shadow-lg">Explore More →</a>
+        </div>
+      </div>
+
+      <!-- Right Image -->
+      <div class="flex-1 flex justify-center" data-aos="zoom-in">
+        <img src="images/slide1.jpg" alt="Food Bowl" class="w-full max-w-md rounded-full shadow-xl border-8 border-orange-100 zoom">
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center" data-aos="fade-up">
+        <!-- Item -->
+        <div class="bg-white shadow-lg p-6 rounded-2xl hover:scale-105 transition">
+          <img src="images/slide2.jpg" class="rounded-full w-28 h-28 mx-auto mb-4">
+          <h3 class="font-bold text-lg">Chicken Momos</h3>
+          <p class="text-sm text-gray-600 my-2">Delicious Momos with fresh chicken.</p>
+          <div class="flex items-center justify-between mt-4">
+            <span class="text-orange-600 font-bold">&#8377;35</span>
+            <a href="getquote.html" class="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700">Get Quote</a>
+          </div>
+        </div>
+        <!-- Pizza -->
+        <div class="bg-white shadow-lg p-6 rounded-2xl hover:scale-105 transition">
+          <img src="images/slide2.jpg" class="rounded-full w-28 h-28 mx-auto mb-4">
+          <h3 class="font-bold text-lg">Veg Momos</h3>
+          <p class="text-sm text-gray-600 my-2">Cheesy and spicy Momos.</p>
+          <div class="flex items-center justify-between mt-4">
+            <span class="text-orange-600 font-bold">&#8377;25</span>
+            <a href="getquote.html" class="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700">Get Quote</a>
+          </div>
+        </div>
+        <!-- Rice -->
+        <div class="bg-white shadow-lg p-6 rounded-2xl hover:scale-105 transition">
+          <img src="images/slide4.webp" class="rounded-full w-28 h-28 mx-auto mb-4">
+          <h3 class="font-bold text-lg">Chease Corn Momos</h3>
+          <p class="text-sm text-gray-600 my-2">Hot and fresh cheese Momos</p>
+          <div class="flex items-center justify-between mt-4">
+            <span class="text-orange-600 font-bold">&#8377;40</span>
+            <a href="getquote.html" class="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700">Get Quote</a>
+          </div>
+        </div>
+        <!-- Dessert -->
+        <div class="bg-white shadow-lg p-6 rounded-2xl hover:scale-105 transition">
+          <img src="images/slide5.jpg" class="rounded-full w-28 h-28 mx-auto mb-4">
+          <h3 class="font-bold text-lg">Paneer Momos</h3>
+          <p class="text-sm text-gray-600 my-2">Sweet and healthy Paneer Momos.</p>
+          <div class="flex items-center justify-between mt-4">
+            <span class="text-orange-600 font-bold">&#8377;35</span>
+            <a href="getquote.html" class="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700">Get Quote</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="py-20 bg-orange-50">
+    <div class="max-w-5xl mx-auto text-center px-6">
+      <h2 class="text-3xl font-bold mb-4" data-aos="fade-down">WHY CHOOSE US?</h2>
+      <p class="text-gray-600 mb-12">Best food, best quality & fast delivery.</p>
+      <div class="grid md:grid-cols-3 gap-8" data-aos="fade-up">
+        <div class="p-6 bg-white shadow-md rounded-2xl hover:scale-105 transition">
+          <div class="text-orange-600 text-4xl mb-4">🥗</div>
+          <h3 class="font-semibold text-lg">Serve Healthy Food</h3>
+          <p class="text-gray-600 text-sm mt-2">We serve only healthy & fresh meals.</p>
+        </div>
+        <div class="p-6 bg-white shadow-md rounded-2xl hover:scale-105 transition">
+          <div class="text-orange-600 text-4xl mb-4">⭐</div>
+          <h3 class="font-semibold text-lg">Best Quality</h3>
+          <p class="text-gray-600 text-sm mt-2">Top-quality taste every time.</p>
+        </div>
+        <div class="p-6 bg-white shadow-md rounded-2xl hover:scale-105 transition">
+          <div class="text-orange-600 text-4xl mb-4">🚚</div>
+          <h3 class="font-semibold text-lg">Fast Delivery</h3>
+          <p class="text-gray-600 text-sm mt-2">Quick delivery at your doorstep.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-6 text-center">
+    <p>&copy; 2025 HomeFood. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
+  <script>
+  // Highlight active menu link
+  const currentPage = window.location.pathname.split("/").pop();
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  navLinks.forEach(link => {
+    if (link.getAttribute("href") === currentPage) {
+      link.classList.add("active-link");
+    }
+  });
+</script>
+</body>
+</html>

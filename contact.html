@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - The Momo Wala</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <style>
+    .active-link {
+      background-color: white !important;
+      color: #ea580c !important; /* Tailwind orange-600 hex */
+    }
+  </style>
+</head>
+<body class="font-sans text-gray-800">
+
+  <!-- Header -->
+  <!-- Copy your header code here -->
+  <header class="fixed w-full bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 shadow-lg z-50">
+    <nav class="container mx-auto flex justify-between items-center py-3 px-6">
+      <a href="#" class="flex items-center space-x-2">
+        <img src="./images/logo/logo.png" alt="HomeFood Logo" class="h-20 w-auto rounded-full bg-white shadow-md">
+        <span class="text-2xl font-extrabold text-white tracking-wide">MOMOS</span>
+      </a>
+      <div class="hidden md:flex items-center space-x-6">
+        <ul class="flex space-x-6">
+          <li><a href="index.html" class="nav-link px-4 py-2 rounded-md text-white font-medium hover:bg-white hover:text-orange-600 transition duration-300 shadow-sm">Home</a></li>
+          <li><a href="about.html" class="nav-link px-4 py-2 rounded-md text-white font-medium hover:bg-white hover:text-orange-600 transition duration-300 shadow-sm">About</a></li>
+          <li><a href="product.html" class="nav-link px-4 py-2 rounded-md text-white font-medium hover:bg-white hover:text-orange-600 transition duration-300 shadow-sm">Product</a></li>
+          <li><a href="contact.html" class="nav-link px-4 py-2 rounded-md text-white font-medium hover:bg-white hover:text-orange-600 transition duration-300 shadow-sm">Contact</a></li>
+        </ul>
+        <a href="getquote.html" class="ml-4 bg-white text-orange-600 font-semibold px-5 py-2 rounded-lg shadow-md hover:bg-orange-600 hover:text-white transition duration-300">
+          Get Quotes
+        </a>
+      </div>
+      <button id="menu-toggle" class="md:hidden text-3xl text-white">☰</button>
+    </nav>
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+      <a href="index.html" class="block px-6 py-3 text-orange-600 font-medium hover:bg-orange-100">Home</a>
+      <a href="about.html" class="block px-6 py-3 text-orange-600 font-medium hover:bg-orange-100">About</a>
+      <a href="product.html" class="block px-6 py-3 text-orange-600 font-medium hover:bg-orange-100">Product</a>
+      <a href="contact.html" class="block px-6 py-3 text-orange-600 font-medium hover:bg-orange-100">Contact</a>
+      <a href="getquote.html" class="block mx-6 my-3 text-center bg-orange-600 text-white font-semibold px-5 py-2 rounded-lg shadow-md hover:bg-orange-700 transition duration-300">
+        Get Quotes
+      </a>
+    </div>
+  </header>
+
+  <!-- Page Content -->
+  <section class="pt-32 pb-16 bg-gray-100">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-6">Contact Us</h2>
+      <p class="text-center text-gray-600 mb-12">Have questions? We'd love to hear from you.</p>
+
+      <div class="flex flex-col lg:flex-row gap-12">
+        <!-- Contact Form -->
+        <div class="flex-1 bg-white p-8 rounded-lg shadow-lg" data-aos="fade-right">
+          <form class="space-y-6">
+            <div>
+              <label class="block text-gray-700 font-semibold mb-2" for="name">Name</label>
+              <input type="text" id="name" placeholder="Your Name" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500">
+            </div>
+            <div>
+              <label class="block text-gray-700 font-semibold mb-2" for="email">Email</label>
+              <input type="email" id="email" placeholder="you@example.com" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500">
+            </div>
+            <div>
+              <label class="block text-gray-700 font-semibold mb-2" for="phone">Phone</label>
+              <input type="tel" id="phone" placeholder="+91 1234567890" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500">
+            </div>
+            <div>
+              <label class="block text-gray-700 font-semibold mb-2" for="message">Message</label>
+              <textarea id="message" rows="5" placeholder="Your Message" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"></textarea>
+            </div>
+            <button type="submit" class="bg-orange-500 text-white px-6 py-3 rounded-md hover:bg-orange-600 transition">Send Message</button>
+          </form>
+        </div>
+
+        <!-- Contact Info & Map -->
+        <div class="flex-1 space-y-6" data-aos="fade-left">
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-2xl font-semibold mb-4 text-gray-800">Get in Touch</h3>
+            <p class="text-gray-600 mb-2"><strong>Address:</strong> 123 Street, City, State, India</p>
+            <p class="text-gray-600 mb-2"><strong>Phone:</strong> +91 9876543210</p>
+            <p class="text-gray-600 mb-2"><strong>Email:</strong> info@example.com</p>
+          </div>
+          <div class="rounded-lg overflow-hidden shadow-lg">
+            <iframe 
+              class="w-full h-64"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.123456789!2d75.123456!3d19.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd...!2sYour%20Location!5e0!3m2!1sen!2sin!4v1234567890" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-6 text-center">
+    <p>&copy; 2025 HomeFood. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    // Mobile menu toggle
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+    // Highlight active menu link
+    const currentPage = window.location.pathname.split("/").pop();
+    const navLinks = document.querySelectorAll(".nav-link");
+    navLinks.forEach(link => {
+      if (link.getAttribute("href") === currentPage) {
+        link.classList.add("active-link");
+      }
+    });
+  </script>
+</body>
+</html>

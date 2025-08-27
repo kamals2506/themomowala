@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About us- The Momo Wala</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <style>
+    /* Text animation */
+    .animate-slide {
+      animation: slideUp 1s ease-in-out;
+    }
+    @keyframes slideUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .zoom {
+      animation: zoomEffect 8s ease-in-out infinite;
+    }
+    @keyframes zoomEffect {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    @keyframes fadeInDown {
+      from {opacity: 0; transform: translateY(-30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    .animate-fadeInDown { animation: fadeInDown 1s ease forwards; }
+    .animate-fadeInUp { animation: fadeInUp 1.2s ease forwards; }
+     @keyframes slide {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+      @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .animate-scroll {
+      display: flex;
+      width: max-content;
+      animation: scroll 20s linear infinite;
+    }
+  .active-link {
+  background-color: white !important;
+  color: #ea580c !important; /* Tailwind orange-600 hex */
+}
+  </style>
+</head>
+<body class="font-sans text-gray-800">
+
+  <!-- Navbar -->
+<header class="fixed w-full bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 shadow-lg z-50">
+  <nav class="container mx-auto flex justify-between items-center py-3 px-6">
+    <!-- Logo -->
+    <a href="#" class="flex items-center space-x-2">
+      <img src="./images/logo/logo.png" alt="HomeFood Logo" class="h-20 w-auto rounded-full bg-white shadow-md">
+      <span class="text-2xl font-extrabold text-white tracking-wide">MOMOS</span>
+    </a>
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex items-center space-x-6">
+     <ul class="flex space-x-6">
+  <li><a href="index.html" class="nav-link px-4 py-2 rounded-md text-white font-medium hover:bg-white hover:text-orange-600 transition duration-300 shadow-sm">Home</a></li>
+  <li><a href="about.html" class="nav-link px-4 py-2 rounded-md text-white font-medium hover:bg-white hover:text-orange-600 transition duration-300 shadow-sm">About</a></li>
+  <li><a href="product.html" class="nav-link px-4 py-2 rounded-md text-white font-medium hover:bg-white hover:text-orange-600 transition duration-300 shadow-sm">Product</a></li>
+  <li><a href="contact.html" class="nav-link px-4 py-2 rounded-md text-white font-medium hover:bg-white hover:text-orange-600 transition duration-300 shadow-sm">Contact</a></li>
+</ul>
+      <!-- Get Quotes Button -->
+      <a href="getquote.html" class="ml-4 bg-white text-orange-600 font-semibold px-5 py-2 rounded-lg shadow-md hover:bg-orange-600 hover:text-white transition duration-300">
+        Get Quotes
+      </a>
+    </div>
+
+    <!-- Mobile Toggle -->
+    <button id="menu-toggle" class="md:hidden text-3xl text-white">☰</button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+    <a href="index.html" class="block px-6 py-3 text-orange-600 font-medium hover:bg-orange-100">Home</a>
+    <a href="about.html" class="block px-6 py-3 text-orange-600 font-medium hover:bg-orange-100">About</a>
+    <a href="product.html" class="block px-6 py-3 text-orange-600 font-medium hover:bg-orange-100">Product</a>
+    <a href="contact.html" class="block px-6 py-3 text-orange-600 font-medium hover:bg-orange-100">Contact</a>
+    <!-- Mobile Get Quotes Button -->
+    <a href="getquote.html" class="block mx-6 my-3 text-center bg-orange-600 text-white font-semibold px-5 py-2 rounded-lg shadow-md hover:bg-orange-700 transition duration-300">
+      Get Quotes
+    </a>
+  </div>
+</header>
+
+ <section class="relative w-full pt-32 pb-24 bg-gradient-to-r from-yellow-50 via-orange-50 to-yellow-100">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center gap-12">
+
+      <!-- Left Content -->
+      <div class="flex-1 space-y-6" data-aos="fade-right" data-aos-duration="1200">
+        <h3 class="text-yellow-500 font-bold text-lg">~ ABOUT US</h3>
+        <h2 class="text-4xl md:text-5xl font-extrabold leading-tight">
+          Crafted with Love, <span class="text-yellow-600">Steamed to Perfection</span>
+        </h2>
+        <p class="text-lg text-gray-600">
+          At <b>The Momo Wala</b>, we believe in serving happiness wrapped in dough. 
+          From classic steamed momos to cheesy delights, we bring you authentic taste 
+          with a modern twist. Each bite tells a story of freshness, flavor, and love.
+        </p>
+
+        <!-- Icons Features -->
+        <div class="grid grid-cols-2 gap-6 mt-8">
+          <div class="flex items-center gap-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="w-14 h-14 flex items-center justify-center rounded-full bg-yellow-100 shadow-md hover:scale-110 transition-transform">
+              <img src="images/fresh.webp" alt="Fresh" class="w-8 h-8">
+            </div>
+            <span class="font-semibold">Fresh Ingredients</span>
+          </div>
+
+          <div class="flex items-center gap-4" data-aos="zoom-in" data-aos-delay="500">
+            <div class="w-14 h-14 flex items-center justify-center rounded-full bg-orange-100 shadow-md hover:scale-110 transition-transform">
+              <img src="images/chef.jpg" alt="Chef" class="w-8 h-8">
+            </div>
+            <span class="font-semibold">Expert Chefs</span>
+          </div>
+
+          <div class="flex items-center gap-4" data-aos="zoom-in" data-aos-delay="700">
+            <div class="w-14 h-14 flex items-center justify-center rounded-full bg-red-100 shadow-md hover:scale-110 transition-transform">
+              <img src="images/heart.webp" alt="Love" class="w-8 h-8">
+            </div>
+            <span class="font-semibold">Made with Love</span>
+          </div>
+
+          <div class="flex items-center gap-4" data-aos="zoom-in" data-aos-delay="900">
+            <div class="w-14 h-14 flex items-center justify-center rounded-full bg-green-100 shadow-md hover:scale-110 transition-transform">
+              <img src="images/quality.png" alt="Quality" class="w-8 h-8">
+            </div>
+            <span class="font-semibold">Quality Assurance</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Image -->
+      <div class="flex-1 flex justify-center" data-aos="fade-left" data-aos-duration="1200">
+        <img src="images/slide4.webp" alt="Momos" class="w-full max-w-md rounded-2xl shadow-xl hover:scale-105 transition-transform duration-500">
+      </div>
+    </div>
+  </section>
+
+  <!-- Extra Section: Our Mission -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6 text-center space-y-12">
+      <h2 class="text-3xl md:text-4xl font-bold" data-aos="fade-up">Our Mission</h2>
+      <p class="text-gray-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="300">
+        To spread the love for momos across every corner, ensuring every momo lover gets 
+        a taste of authentic flavors. We aim to create joyful dining experiences with 
+        consistency, hygiene, and love.
+      </p>
+      <div class="grid md:grid-cols-3 gap-8 mt-10">
+        <div class="p-6 bg-yellow-50 rounded-xl shadow-md hover:scale-105 transition" data-aos="zoom-in">
+          <h3 class="font-bold text-xl mb-2">Authentic Taste</h3>
+          <p class="text-gray-600">Bringing you the flavors of traditional Himalayan kitchens.</p>
+        </div>
+        <div class="p-6 bg-orange-50 rounded-xl shadow-md hover:scale-105 transition" data-aos="zoom-in" data-aos-delay="300">
+          <h3 class="font-bold text-xl mb-2">Hygiene First</h3>
+          <p class="text-gray-600">Prepared in a clean environment to ensure health & safety.</p>
+        </div>
+        <div class="p-6 bg-red-50 rounded-xl shadow-md hover:scale-105 transition" data-aos="zoom-in" data-aos-delay="600">
+          <h3 class="font-bold text-xl mb-2">Customer Love</h3>
+          <p class="text-gray-600">Your happiness is our ultimate reward. ❤️</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+    <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-6 text-center">
+    <p>&copy; 2025 HomeFood. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- <script>
+    // Mobile menu toggle
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    // Active menu link color
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.forEach(l => l.classList.remove('bg-orange-500', 'text-white'));
+        link.classList.add('bg-orange-500', 'text-white');
+      });
+    });
+
+    // Hero slider
+    const slides = document.querySelectorAll('.hero-slide');
+    const heroText = document.getElementById('hero-text');
+    const heroTexts = [
+      "Delicious Momos, Every Bite a Delight!",
+      "The Taste of Authentic Momos",
+      "Hot, Juicy, and Irresistible Momos",
+      "Momos Made with Passion"
+    ];
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.style.opacity = (i === index) ? '1' : '0';
+      });
+      heroText.textContent = heroTexts[index];
+      heroText.classList.remove('animate-slide');
+      void heroText.offsetWidth; // restart animation
+      heroText.classList.add('animate-slide');
+    }
+
+    setInterval(() => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }, 5000);
+
+    showSlide(currentSlide);
+
+    // Menu filter
+    const menuBtns = document.querySelectorAll('.menu-btn');
+    const menuItems = document.querySelectorAll('.menu-item');
+
+    menuBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        menuBtns.forEach(b => b.classList.remove('bg-orange-500', 'text-white'));
+        btn.classList.add('bg-orange-500', 'text-white');
+
+        const category = btn.dataset.category;
+        menuItems.forEach(item => {
+          if (category === 'all' || item.dataset.category === category) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script> -->
+   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+    <script>
+    (function () {
+      const counters = document.querySelectorAll('.counter');
+      let started = false;
+
+      function animate(el, target, duration = 1500) {
+        const start = 0;
+        const startTime = performance.now();
+
+        function step(now) {
+          const progress = Math.min((now - startTime) / duration, 1);
+          const value = Math.floor(progress * (target - start) + start);
+          el.textContent = value.toLocaleString();
+          if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && !started) {
+              started = true;
+              counters.forEach((c) => animate(c, parseInt(c.dataset.target, 10)));
+              observer.disconnect();
+            }
+          });
+        },
+        { threshold: 0.3 }
+      );
+
+      if (counters.length) observer.observe(counters[0].closest('section'));
+    })();
+  </script>
+  <script>
+  // Highlight active menu link
+  const currentPage = window.location.pathname.split("/").pop();
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  navLinks.forEach(link => {
+    if (link.getAttribute("href") === currentPage) {
+      link.classList.add("active-link");
+    }
+  });
+</script>
+
+
+</body>
+</html>

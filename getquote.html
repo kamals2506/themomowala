@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Quote- The Momo Wala</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <style>
+    /* Slide down animation for mobile menu */
+    @keyframes slideDown {
+      from { max-height: 0; opacity: 0; }
+      to { max-height: 500px; opacity: 1; }
+    }
+    .animate-slideDown {
+      animation: slideDown 0.3s ease-in-out forwards;
+    }
+      .active-link {
+  background-color: white !important;
+  color: #ea580c !important; /* Tailwind orange-600 hex */
+}
+  </style>
+</head>
+<body class="font-sans text-gray-800 bg-gray-50">
+
+  <!-- Header -->
+ <header class="fixed w-full bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 shadow-lg z-50">
+  <nav class="container mx-auto flex justify-between items-center py-3 px-6">
+    <!-- Logo -->
+    <a href="#" class="flex items-center space-x-2">
+      <img src="./images/logo/logo.png" alt="HomeFood Logo" class="h-20 w-auto rounded-full bg-white shadow-md">
+      <span class="text-2xl font-extrabold text-white tracking-wide">MOMOS</span>
+    </a>
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex items-center space-x-6">
+      <ul class="flex space-x-6">
+        <li><a href="index.html" class="px-4 py-2 rounded-md text-white font-medium hover:bg-white hover:text-orange-600 transition duration-300 shadow-sm">Home</a></li>
+        <li><a href="about.html" class="px-4 py-2 rounded-md text-white font-medium hover:bg-white hover:text-orange-600 transition duration-300 shadow-sm">About</a></li>
+        <li><a href="product.html" class="px-4 py-2 rounded-md text-white font-medium hover:bg-white hover:text-orange-600 transition duration-300 shadow-sm">Product</a></li>
+        <li><a href="contact.htm;" class="px-4 py-2 rounded-md text-white font-medium hover:bg-white hover:text-orange-600 transition duration-300 shadow-sm">Contact</a></li>
+      </ul>
+      <!-- Get Quotes Button -->
+      <a href="getquote.html" class="ml-4 bg-white text-orange-600 font-semibold px-5 py-2 rounded-lg shadow-md hover:bg-orange-600 hover:text-white transition duration-300">
+        Get Quotes
+      </a>
+    </div>
+
+    <!-- Mobile Toggle -->
+    <button id="menu-toggle" class="md:hidden text-3xl text-white">☰</button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+    <a href="index.html" class="block px-6 py-3 text-orange-600 font-medium hover:bg-orange-100">Home</a>
+    <a href="about.html" class="block px-6 py-3 text-orange-600 font-medium hover:bg-orange-100">About</a>
+    <a href="product.html" class="block px-6 py-3 text-orange-600 font-medium hover:bg-orange-100">Product</a>
+    <a href="contact.html" class="block px-6 py-3 text-orange-600 font-medium hover:bg-orange-100">Contact</a>
+    <!-- Mobile Get Quotes Button -->
+    <a href="getquote.html" class="block mx-6 my-3 text-center bg-orange-600 text-white font-semibold px-5 py-2 rounded-lg shadow-md hover:bg-orange-700 transition duration-300">
+      Get Quotes
+    </a>
+  </div>
+</header>
+
+  <!-- Form Section (centered under header) -->
+  <section class="flex items-center justify-center min-h-screen px-4 pt-28">
+    <div class="max-w-3xl w-full p-8 bg-white shadow-lg rounded-2xl">
+      <h2 class="text-3xl font-bold text-center mb-6 text-gray-800 animate-bounce">Order Momos</h2>
+
+      <form id="momoForm" class="space-y-6">
+        <!-- User Details -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input type="text" placeholder="Full Name" class="border rounded-lg p-3 w-full focus:ring-2 focus:ring-green-500" required>
+          <input type="email" placeholder="Email" class="border rounded-lg p-3 w-full focus:ring-2 focus:ring-green-500" required>
+          <input type="tel" placeholder="Mobile" class="border rounded-lg p-3 w-full focus:ring-2 focus:ring-green-500" required>
+          <input type="text" placeholder="Shop Name" class="border rounded-lg p-3 w-full focus:ring-2 focus:ring-green-500" required>
+        </div>
+
+        <!-- Product Selection -->
+        <h3 class="text-xl font-semibold text-gray-700">Select Products</h3>
+        <div class="flex flex-wrap gap-4">
+          <label class="flex items-center gap-2 border p-2 rounded-lg shadow cursor-pointer">
+            <input type="checkbox" value="Veg Momos" class="productCheckbox">
+            <span>Veg Momos</span>
+          </label>
+          <label class="flex items-center gap-2 border p-2 rounded-lg shadow cursor-pointer">
+            <input type="checkbox" value="Chicken Momos" class="productCheckbox">
+            <span>Chicken Momos</span>
+          </label>
+          <label class="flex items-center gap-2 border p-2 rounded-lg shadow cursor-pointer">
+            <input type="checkbox" value="Paneer Momos" class="productCheckbox">
+            <span>Paneer Momos</span>
+          </label>
+          <label class="flex items-center gap-2 border p-2 rounded-lg shadow cursor-pointer">
+            <input type="checkbox" value="Cheese Corn Momos" class="productCheckbox">
+            <span>Cheese Corn Momos</span>
+          </label>
+        </div>
+
+        <!-- Dynamic Plates Input -->
+        <div id="platesContainer" class="mt-6 space-y-4"></div>
+
+        <!-- Submit -->
+        <button type="submit" class="bg-green-600 text-white px-6 py-3 rounded-xl shadow-md hover:bg-green-700 transition w-full font-semibold">
+          Submit Order
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact" class="bg-gray-800 text-white py-6 text-center">
+    <p>&copy; 2025 HomeFood. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      mobileMenu.classList.toggle('animate-slideDown');
+    });
+
+    // Dynamic Plates Input
+    const checkboxes = document.querySelectorAll('.productCheckbox');
+    const platesContainer = document.getElementById('platesContainer');
+
+    checkboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', () => {
+        platesContainer.innerHTML = '';
+        checkboxes.forEach(cb => {
+          if (cb.checked) {
+            const div = document.createElement('div');
+            div.className = "flex items-center gap-4 border p-3 rounded-lg shadow";
+            div.innerHTML = `
+              <span class="font-medium text-gray-700">${cb.value}</span>
+              <input type="number" min="1" placeholder="Plates" class="border rounded-lg p-2 w-24 focus:ring-2 focus:ring-green-500">
+            `;
+            platesContainer.appendChild(div);
+          }
+        });
+      });
+    });
+  </script>
+  <script>
+  // Highlight active menu link
+  const currentPage = window.location.pathname.split("/").pop();
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  navLinks.forEach(link => {
+    if (link.getAttribute("href") === currentPage) {
+      link.classList.add("active-link");
+    }
+  });
+</script>
+</body>
+</html>

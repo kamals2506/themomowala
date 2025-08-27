@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Momo Wala</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <style>
+     html, body {
+    overflow-x: hidden;
+  }
+    /* Text animation */
+    .animate-slide {
+      animation: slideUp 1s ease-in-out;
+    }
+    @keyframes slideUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .zoom {
+      animation: zoomEffect 8s ease-in-out infinite;
+    }
+    @keyframes zoomEffect {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    @keyframes fadeInDown {
+      from {opacity: 0; transform: translateY(-30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    .animate-fadeInDown { animation: fadeInDown 1s ease forwards; }
+    .animate-fadeInUp { animation: fadeInUp 1.2s ease forwards; }
+     @keyframes slide {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+      @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .animate-scroll {
+      display: flex;
+      width: max-content;
+      animation: scroll 20s linear infinite;
+    }
+  </style>
+</head>
+<body class="font-sans text-gray-800">
+
+  <!-- Navbar -->
+<header class="fixed w-full bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 shadow-lg z-50">
+  <nav class="container mx-auto flex justify-between items-center py-3 px-6">
+    <!-- Logo -->
+    <a href="#" class="flex items-center space-x-2">
+      <img src="./images/logo/logo.png" alt="HomeFood Logo" class="h-20 w-auto rounded-full bg-white shadow-md">
+      <span class="text-2xl font-extrabold text-white tracking-wide">MOMOS</span>
+    </a>
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex items-center space-x-6">
+       <ul class="flex space-x-6">
+  <li><a href="index.html" class="nav-link px-4 py-2 rounded-md text-white font-medium hover:bg-white hover:text-orange-600 transition duration-300 shadow-sm">Home</a></li>
+  <li><a href="about.html" class="nav-link px-4 py-2 rounded-md text-white font-medium hover:bg-white hover:text-orange-600 transition duration-300 shadow-sm">About</a></li>
+  <li><a href="product.html" class="nav-link px-4 py-2 rounded-md text-white font-medium hover:bg-white hover:text-orange-600 transition duration-300 shadow-sm">Product</a></li>
+  <li><a href="contact.html" class="nav-link px-4 py-2 rounded-md text-white font-medium hover:bg-white hover:text-orange-600 transition duration-300 shadow-sm">Contact</a></li>
+</ul>
+      <!-- Get Quotes Button -->
+      <a href="getquote.html" class="ml-4 bg-white text-orange-600 font-semibold px-5 py-2 rounded-lg shadow-md hover:bg-orange-600 hover:text-white transition duration-300">
+        Get Quotes
+      </a>
+    </div>
+
+    <!-- Mobile Toggle -->
+    <button id="menu-toggle" class="md:hidden text-3xl text-white">☰</button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+    <a href="index.html" class="block px-6 py-3 text-orange-600 font-medium hover:bg-orange-100">Home</a>
+    <a href="about.html" class="block px-6 py-3 text-orange-600 font-medium hover:bg-orange-100">About</a>
+    <a href="product.html" class="block px-6 py-3 text-orange-600 font-medium hover:bg-orange-100">Product</a>
+    <a href="contact.html" class="block px-6 py-3 text-orange-600 font-medium hover:bg-orange-100">Contact</a>
+    <!-- Mobile Get Quotes Button -->
+    <a href="getquote.html" class="block mx-6 my-3 text-center bg-orange-600 text-white font-semibold px-5 py-2 rounded-lg shadow-md hover:bg-orange-700 transition duration-300">
+      Get Quotes
+    </a>
+  </div>
+</header>
+
+
+
+  <!-- Hero Section Slider -->
+  <section class="relative h-screen overflow-hidden">
+    <div class="absolute inset-0">
+      <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000 zoom" style="background-image: url('./images/slide11.jpg'); background-size: cover; background-position: center;"></div>
+      <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000 zoom" style="background-image: url('./images/slide2.jpg'); background-size: cover; background-position: center;"></div>
+      <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000 zoom" style="background-image: url('./images/slide3.jpg'); background-size: cover; background-position: center;"></div>
+      <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000 zoom" style="background-image: url('./images/slide5.jpg'); background-size: cover; background-position: center;"></div>
+    </div>
+    <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center text-white">
+      <h1 id="hero-text" class="text-4xl md:text-6xl font-bold animate-slide">Delicious Momos, Every Bite a Delight!</h1>
+      <p class="mt-4 text-lg md:text-xl">Freshly Steamed • Perfectly Spiced • Served with Love</p>
+      <div class="mt-6 space-x-4">
+        <a href="#menu" class="px-6 py-3 bg-orange-500 hover:bg-orange-600 rounded-md text-white">View Menu</a>
+        <a href="#contact" class="px-6 py-3 bg-gray-200 hover:bg-gray-300 rounded-md text-black">Reserve Now</a>
+      </div>
+    </div>
+  </section>
+  <section class="relative w-full py-16 md:py-24 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-8">
+        <!-- Products -->
+        <div class="bg-white rounded-2xl shadow p-6 text-center">
+          <svg class="w-10 h-10 mx-auto mb-3 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M20.25 7.5l-8.25 4.5L3.75 7.5m16.5 0L12 3 3.75 7.5m16.5 0V16.5L12 21l-8.25-4.5V7.5" />
+          </svg>
+          <div class="text-4xl font-extrabold">
+            <span class="counter" data-target="1250">0</span>+
+          </div>
+          <p class="mt-2 text-gray-600 font-medium">Products</p>
+        </div>
+
+        <!-- Outlets -->
+        <div class="bg-white rounded-2xl shadow p-6 text-center">
+          <svg class="w-10 h-10 mx-auto mb-3 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M3 7.5l9-4.5 9 4.5M4.5 8.25h15v9.75a2.25 2.25 0 0 1-2.25 2.25h-10.5A2.25 2.25 0 0 1 4.5 18V8.25z" />
+          </svg>
+          <div class="text-4xl font-extrabold">
+            <span class="counter" data-target="320">0</span>+
+          </div>
+          <p class="mt-2 text-gray-600 font-medium">Outlets</p>
+        </div>
+
+        <!-- Partners -->
+        <div class="bg-white rounded-2xl shadow p-6 text-center">
+          <svg class="w-10 h-10 mx-auto mb-3 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M15 19.5A3.75 3.75 0 1 0 15 12a3.75 3.75 0 0 0 0 7.5zm-6 0A3.75 3.75 0 1 0 9 12a3.75 3.75 0 0 0 0 7.5zM3 8.25a3.75 3.75 0 1 0 7.5 0 3.75 3.75 0 0 0-7.5 0zm10.5 0A3.75 3.75 0 1 0 21 8.25a3.75 3.75 0 0 0-7.5 0z" />
+          </svg>
+          <div class="text-4xl font-extrabold">
+            <span class="counter" data-target="85">0</span>+
+          </div>
+          <p class="mt-2 text-gray-600 font-medium">Partners</p>
+        </div>
+
+        <!-- Customers -->
+        <div class="bg-white rounded-2xl shadow p-6 text-center">
+          <svg class="w-10 h-10 mx-auto mb-3 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M17.982 18.725A7.488 7.488 0 0 0 12 16.5a7.488 7.488 0 0 0-5.982 2.225M15.75 9.75a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0z" />
+          </svg>
+          <div class="text-4xl font-extrabold">
+            <span class="counter" data-target="50000">0</span>+
+          </div>
+          <p class="mt-2 text-gray-600 font-medium">Customers</p>
+        </div>
+      </div>
+    </div>
+  </section>
+    <section class="relative w-full py-16 md:py-24 bg-white from-blue-50 via-blue-100 to-blue-200">
+    
+    <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold" data-aos="fade-up">About Us</h2>
+      
+      <p class="text-gray-700 mt-3 text-lg" data-aos="fade-up">We deliver smart business solutions with creativity and strategy</p>
+    </div>
+
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-8 px-6">
+
+      <!-- Left Image -->
+      <div data-aos="fade-right" data-aos-duration="1200">
+        <img src="images/slide11.jpg" alt="About Us"
+             class="w-full h-[400px] md:h-[500px] object-cover rounded-2xl shadow-lg">
+      </div>
+
+      <!-- Right Content in Shape -->
+      <div data-aos="fade-left" data-aos-duration="1200"
+           class="relative bg-blue-900 text-white p-10 md:p-14 rounded-tl-[80px] rounded-br-[80px] shadow-lg">
+        
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          Hello! We’re Business Consultancy
+        </h2>
+        <p class="mb-6 text-base leading-relaxed text-gray-200">
+          Fusce at nisi eget dolor rhoncus facilisis. Mauris ante nisl, 
+          consectetur et luctus et, porta ut dolor. Curabitur ultricies 
+          ultricies nulla. Morbi blandit nec est vitae dictum. Etiam vel 
+          consectetur diam.
+        </p>
+        <a href="#"
+           class="inline-block bg-yellow-400 text-blue-900 font-semibold px-6 py-3 rounded-full hover:bg-yellow-500 transition">
+          Read More
+        </a>
+
+        <!-- Decorative circle -->
+        <span class="absolute bottom-[-20px] left-[-20px] w-12 h-12 bg-yellow-400 rounded-full"></span>
+      </div>
+
+    </div>
+  </section>
+<section class="relative bg-fixed bg-center bg-cover bg-no-repeat h-[70vh] flex items-center justify-center" 
+         style="background-image: url('images/slide5.jpg');">
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+  <!-- Content -->
+  <div class="relative text-center text-white px-4">
+    <h1 class="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-lg" 
+        data-aos="fade-down" data-aos-duration="1000">
+      Welcome to Our Journey
+    </h1>
+    <p class="text-lg md:text-2xl max-w-2xl mx-auto leading-relaxed drop-shadow-md" 
+       data-aos="fade-up" data-aos-duration="1200">
+      Delivering excellence with products, outlets, partners, and happy customers worldwide.
+    </p>
+  </div>
+</section>
+
+  <!-- Our Menu Section -->
+  <section id="menu" class="py-16 bg-gray-100 text-center">
+       <h2 class="text-3xl md:text-4xl font-bold" data-aos="fade-up">Our Product</h2>
+
+    <div class="flex justify-center mt-5 space-x-4 mb-8">
+      <button class="menu-btn bg-orange-500 text-white px-4 py-2 rounded" data-category="all">All</button>
+      <button class="menu-btn bg-gray-200 px-4 py-2 rounded" data-category="chinese">Chicken MOMO</button>
+      <button class="menu-btn bg-gray-200 px-4 py-2 rounded" data-category="pizza">Panner Momo</button>
+      <button class="menu-btn bg-gray-200 px-4 py-2 rounded" data-category="burger">Veg MOMO</button>
+      <button class="menu-btn bg-gray-200 px-4 py-2 rounded" data-category="burger">Cheese Corn MOMO</button>
+    </div>
+
+    <!-- Menu Items -->
+    <div id="menu-items" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+      <div class="menu-item bg-white p-6 rounded shadow" data-category="chinese">
+        <img src="images/slide1.jpg" class="w-full h-48 object-cover rounded" alt="Chinese">
+        <h3 class="mt-4 text-xl font-bold">Veg MOMO</h3>
+      </div>
+      <div class="menu-item bg-white p-6 rounded shadow" data-category="pizza">
+        <img src="images/slide2.jpg" class="w-full h-48 object-cover rounded" alt="Pizza">
+        <h3 class="mt-4 text-xl font-bold">Panner Momo</h3>
+      </div>
+      <div class="menu-item bg-white p-6 rounded shadow" data-category="burger">
+        <img src="images/slide3.jpg" class="w-full h-48 object-cover rounded" alt="Burger">
+        <h3 class="mt-4 text-xl font-bold">Chicken MOMO</h3>
+      </div>
+    </div>
+  </section>
+   <section class="py-16 px-6 md:px-12 lg:px-20 text-center">
+     <h2 class="text-3xl md:text-4xl font-bold" data-aos="fade-up">Our Layout</h2>
+  
+    <p class="text-gray-600 max-w-3xl mx-auto mb-12 mt-5" data-aos="fade-up">
+      Our services include Custom Menu Design, Branding Design, Restaurant Design Website, 
+      Online Menus, Restaurant Chatbots, Social Media Management, and SEO For Restaurants Services.
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-10">
+      
+      <!-- Service 1 -->
+      <div class="flex flex-col items-center" data-aos="zoom-in" data-aos-delay="300" >
+        <div class="w-40 h-40 rounded-full overflow-hidden border-8 border-orange-600 flex items-center justify-center bg-white group">
+          <img src="images/logo1.png" alt="Menu Design" class="w-20 h-20 object-contain transition-transform duration-500 group-hover:scale-110">
+        </div>
+        <h3 class="mt-6 text-xl font-bold uppercase text-orange-600" data-aos="zoom-in" data-aos-delay="300" >Restaurant Menu Design</h3>
+        <p class="text-gray-600 mt-2 px-4" data-aos="zoom-in" data-aos-delay="300">
+          We design eye-catching, attention-getting menus that reflect your image 
+          and fit your unique food business or brand.
+        </p>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="flex flex-col items-center" data-aos="zoom-in" data-aos-delay="500">
+        <div class="w-40 h-40 rounded-full overflow-hidden border-8 border-orange-600 flex items-center justify-center bg-white group">
+          <img src="images/logo2.png" alt="Branding" class="w-20 h-20 object-contain transition-transform duration-500 group-hover:scale-110">
+        </div>
+        <h3 class="mt-6 text-xl font-bold uppercase text-orange-600" data-aos="zoom-in" data-aos-delay="500">Restaurant Branding</h3>
+        <p class="text-gray-600 mt-2 px-4" data-aos="zoom-in" data-aos-delay="500">
+          Branding your business inside and outside your restaurant, or other food service 
+          business can help enhance your image and keep your name on customers’ lips.
+        </p>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="flex flex-col items-center"data-aos="zoom-in" data-aos-delay="700">
+        <div class="w-40 h-40 rounded-full overflow-hidden border-8 border-orange-600 flex items-center justify-center bg-white group" >
+          <img src="images/logo3.png" alt="Website Design" class="w-20 h-20 object-contain transition-transform duration-500 group-hover:scale-110">
+        </div>
+        <h3 class="mt-6 text-xl font-bold uppercase text-orange-600"data-aos="zoom-in" data-aos-delay="700">Restaurant Website Design</h3>
+        <p class="text-gray-600 mt-2 px-4"data-aos="zoom-in" data-aos-delay="700">
+          We offer eye-catching, enticing, custom-designed websites catered to your 
+          restaurant, bakery, bar, or other food service business.
+        </p>
+      </div>
+
+    </div>
+  </section>
+ <section class="py-12">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold" data-aos="fade-up">Our Partners</h2>
+ 
+
+      <!-- Slider Container -->
+      <div class="overflow-hidden relative mt-10">
+        <div class="animate-scroll">
+          <!-- Logos Row -->
+          <div class="flex space-x-16">
+            <div class="w-24 h-24 rounded-full border-2 border-gray-300 flex items-center justify-center shadow-lg hover:scale-110 transition">
+              <img src="https://dummyimage.com/80x80/000/fff&text=1" class="w-16 h-16 object-contain rounded-full" alt="Logo 1">
+            </div>
+            <div class="w-24 h-24 rounded-full border-2 border-gray-300 flex items-center justify-center shadow-lg hover:scale-110 transition">
+              <img src="https://dummyimage.com/80x80/222/fff&text=2" class="w-16 h-16 object-contain rounded-full" alt="Logo 2">
+            </div>
+            <div class="w-24 h-24 rounded-full border-2 border-gray-300 flex items-center justify-center shadow-lg hover:scale-110 transition">
+              <img src="https://dummyimage.com/80x80/444/fff&text=3" class="w-16 h-16 object-contain rounded-full" alt="Logo 3">
+            </div>
+            <div class="w-24 h-24 rounded-full border-2 border-gray-300 flex items-center justify-center shadow-lg hover:scale-110 transition">
+              <img src="https://dummyimage.com/80x80/666/fff&text=4" class="w-16 h-16 object-contain rounded-full" alt="Logo 4">
+            </div>
+            <div class="w-24 h-24 rounded-full border-2 border-gray-300 flex items-center justify-center shadow-lg hover:scale-110 transition">
+              <img src="https://dummyimage.com/80x80/888/fff&text=5" class="w-16 h-16 object-contain rounded-full" alt="Logo 5">
+            </div>
+          </div>
+
+          <!-- Duplicate Row for Infinite Effect -->
+          <div class="flex space-x-16 ml-16">
+            <div class="w-24 h-24 rounded-full border-2 border-gray-300 flex items-center justify-center shadow-lg hover:scale-110 transition">
+              <img src="https://dummyimage.com/80x80/000/fff&text=1" class="w-16 h-16 object-contain rounded-full" alt="Logo 1">
+            </div>
+            <div class="w-24 h-24 rounded-full border-2 border-gray-300 flex items-center justify-center shadow-lg hover:scale-110 transition">
+              <img src="https://dummyimage.com/80x80/222/fff&text=2" class="w-16 h-16 object-contain rounded-full" alt="Logo 2">
+            </div>
+            <div class="w-24 h-24 rounded-full border-2 border-gray-300 flex items-center justify-center shadow-lg hover:scale-110 transition">
+              <img src="https://dummyimage.com/80x80/444/fff&text=3" class="w-16 h-16 object-contain rounded-full" alt="Logo 3">
+            </div>
+            <div class="w-24 h-24 rounded-full border-2 border-gray-300 flex items-center justify-center shadow-lg hover:scale-110 transition">
+              <img src="https://dummyimage.com/80x80/666/fff&text=4" class="w-16 h-16 object-contain rounded-full" alt="Logo 4">
+            </div>
+            <div class="w-24 h-24 rounded-full border-2 border-gray-300 flex items-center justify-center shadow-lg hover:scale-110 transition">
+              <img src="https://dummyimage.com/80x80/888/fff&text=5" class="w-16 h-16 object-contain rounded-full" alt="Logo 5">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Contact Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+     
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Left: Address Info -->
+        <div class="bg-gray-100 shadow-md rounded-2xl p-6 md:col-span-1">
+             <h2 class="text-3xl md:text-4xl font-bold" data-aos="fade-up">Get in Touch</h2>
+          
+          <p class="text-gray-600 mb-3"><strong>Address:</strong><br>123 Business Street,<br>Pune, India</p>
+          <p class="text-gray-600 mb-3"><strong>Phone:</strong><br>+91 98765 43210</p>
+          <p class="text-gray-600"><strong>Email:</strong><br>info@yourcompany.com</p>
+        </div>
+
+        <!-- Right: Google Map -->
+        <div class="bg-white shadow-md rounded-2xl md:col-span-2 overflow-hidden">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.366147551109!2d73.85674361519524!3d18.520430473401816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c07a3c6e6a2f%3A0x5a1f2d17f8f7d9ff!2sPune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1692899999999" 
+            width="100%" 
+            height="350" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-6 text-center">
+    <p>&copy; 2025 HomeFood. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Mobile menu toggle
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    
+
+    // Hero slider
+    const slides = document.querySelectorAll('.hero-slide');
+    const heroText = document.getElementById('hero-text');
+    const heroTexts = [
+      "Delicious Momos, Every Bite a Delight!",
+      "The Taste of Authentic Momos",
+      "Hot, Juicy, and Irresistible Momos",
+      "Momos Made with Passion"
+    ];
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.style.opacity = (i === index) ? '1' : '0';
+      });
+      heroText.textContent = heroTexts[index];
+      heroText.classList.remove('animate-slide');
+      void heroText.offsetWidth; // restart animation
+      heroText.classList.add('animate-slide');
+    }
+
+    setInterval(() => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }, 5000);
+
+    showSlide(currentSlide);
+
+    // Menu filter
+    const menuBtns = document.querySelectorAll('.menu-btn');
+    const menuItems = document.querySelectorAll('.menu-item');
+
+    menuBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        menuBtns.forEach(b => b.classList.remove('bg-orange-500', 'text-white'));
+        btn.classList.add('bg-orange-500', 'text-white');
+
+        const category = btn.dataset.category;
+        menuItems.forEach(item => {
+          if (category === 'all' || item.dataset.category === category) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+    <script>
+    (function () {
+      const counters = document.querySelectorAll('.counter');
+      let started = false;
+
+      function animate(el, target, duration = 1500) {
+        const start = 0;
+        const startTime = performance.now();
+
+        function step(now) {
+          const progress = Math.min((now - startTime) / duration, 1);
+          const value = Math.floor(progress * (target - start) + start);
+          el.textContent = value.toLocaleString();
+          if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && !started) {
+              started = true;
+              counters.forEach((c) => animate(c, parseInt(c.dataset.target, 10)));
+              observer.disconnect();
+            }
+          });
+        },
+        { threshold: 0.3 }
+      );
+
+      if (counters.length) observer.observe(counters[0].closest('section'));
+    })();
+  </script>
+<script>
+  const currentPage = window.location.pathname.split("/").pop() || "index.html";
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  navLinks.forEach(link => {
+    if (link.getAttribute("href") === currentPage) {
+      link.classList.remove("text-white");
+      link.classList.add("bg-white", "text-orange-600");
+    }
+  });
+</script>
+
+</body>
+</html>
